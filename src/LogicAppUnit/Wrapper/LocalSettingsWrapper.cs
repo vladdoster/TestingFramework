@@ -78,7 +78,7 @@ namespace LogicAppUnit.Wrapper
         {
             ArgumentNullException.ThrowIfNull(settingsToUpdate);
 
-            Console.WriteLine($"Updating local settings file with test overrides:");
+            Console.WriteLine("Updating local settings file with test overrides:");
 
             foreach (KeyValuePair<string, string> setting in settingsToUpdate)
             {
@@ -92,7 +92,7 @@ namespace LogicAppUnit.Wrapper
                 }
                 else
                 {
-                    Console.WriteLine($"      WARNING: Setting does not exist");
+                    Console.WriteLine("      WARNING: Setting does not exist");
                 }
             }
         }
