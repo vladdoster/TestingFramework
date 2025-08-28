@@ -48,10 +48,7 @@ namespace LogicAppUnit.Wrapper
         /// </summary>
         public string WorkflowName
         {
-            get
-            {
-                return _workflowName;
-            }
+            get => _workflowName;
         }
 
         /// <summary>
@@ -59,10 +56,7 @@ namespace LogicAppUnit.Wrapper
         /// </summary>
         public WorkflowType WorkflowType
         {
-            get
-            {
-                return Enum.Parse<WorkflowType>(_jObjectWorkflow["kind"].ToString());
-            }
+            get => Enum.Parse<WorkflowType>(_jObjectWorkflow["kind"].ToString());
         }
 
         /// <summary>

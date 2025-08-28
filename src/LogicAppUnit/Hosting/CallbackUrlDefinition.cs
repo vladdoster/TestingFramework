@@ -52,10 +52,7 @@ namespace LogicAppUnit.Hosting
         /// </summary>
         public string QueryString
         {
-            get
-            {
-                return string.Join("&", Queries.Select(q => $"{WebUtility.UrlEncode(q.Key)}={WebUtility.UrlEncode(q.Value)}"));
-            }
+            get => string.Join("&", Queries.Select(q => $"{WebUtility.UrlEncode(q.Key)}={WebUtility.UrlEncode(q.Value)}"));
         }
 
         /// <summary>
