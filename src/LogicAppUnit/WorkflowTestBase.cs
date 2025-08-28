@@ -51,7 +51,7 @@ namespace LogicAppUnit
         /// <summary>
         /// Initializes a new instance of the <see cref="WorkflowTestBase"/> class.
         /// </summary>
-        public WorkflowTestBase()
+        protected WorkflowTestBase()
         {
             _mockResponses = new List<MockResponse>();
         }
