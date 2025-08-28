@@ -302,7 +302,7 @@ namespace LogicAppUnit.Mocking
             if (_requestHeaders.Count > 0)
             {
                 if (!request.Headers.Any())
-                    return new MockRequestMatchResult(false, $"The request does not have any headers so matching has failed");
+                    return new MockRequestMatchResult(false, "The request does not have any headers so matching has failed");
 
                 foreach (var requestHeader in _requestHeaders)
                 {
@@ -324,7 +324,7 @@ namespace LogicAppUnit.Mocking
                 var parsedParamsAsDictionary = request.RequestUri.ParseQueryString().AllKeys.ToDictionary(k => k, k => parsedParams[k]);
 
                 if (parsedParamsAsDictionary.Count == 0)
-                    return new MockRequestMatchResult(false, $"The request does not have any query parameters so matching has failed");
+                    return new MockRequestMatchResult(false, "The request does not have any query parameters so matching has failed");
 
                 foreach (var requestParam in _requestQueryParams)
                 {
@@ -346,11 +346,11 @@ namespace LogicAppUnit.Mocking
             // This is AND logic when multiple delegate functions are specified in the match
             if (_requestContentStringMatcherDelegate != null && !_requestContentStringMatcherDelegate(await requestCache.ContentAsStringAsync()))
             {
-                return new MockRequestMatchResult(false, $"The request content is not matched");
+                return new MockRequestMatchResult(false, "The request content is not matched");
             }
             if (_requestContentJsonMatcherDelegate != null && !_requestContentJsonMatcherDelegate(await requestCache.ContentAsJsonAsync()))
             {
-                return new MockRequestMatchResult(false, $"The JSON request content is not matched");
+                return new MockRequestMatchResult(false, "The JSON request content is not matched");
             }
 
             _requestMatchCounter++;
