@@ -1,0 +1,9 @@
+version = 1
+
+test_patterns = ["src/LogicAppUnit.Samples.LogicApps.Tests/**"]
+
+[[analyzers]]
+name = "csharp"
+
+[[transformers]]
+name = "dotnet-format"
